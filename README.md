@@ -1,7 +1,6 @@
-# system_monitor_py
-# 🖥️ Python Real-Time System Monitor
+# 🖥️ Lightweight Python System Monitor
 
-A lightweight, terminal-based system monitoring dashboard built with Python. It provides real-time tracking of CPU, RAM, GPU, and high-performance processes using a beautiful Terminal User Interface (TUI).
+A simple, dependency-light terminal dashboard for monitoring system performance. It tracks CPU, RAM, GPU, and high-resource processes in real-time using standard Python output.
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -9,15 +8,15 @@ A lightweight, terminal-based system monitoring dashboard built with Python. It 
 
 ## ✨ Features
 
-* **Real-Time Dashboard:** Updates system stats every second without flickering.
-* **Universal GPU Support:** Supports NVIDIA, AMD, and Intel Integrated Graphics (via LibreHardwareMonitor).
-* **Process Tracking:** Identifies the top resource-consuming processes (sorted by CPU usage).
-* **Beautiful UI:** Built using the [Rich](https://github.com/Textualize/rich) library for easy-to-read tables and panels.
+* **Real-Time Monitoring:** Updates system stats every second.
+* **Universal GPU Support:** Works with NVIDIA, AMD, and Intel Integrated Graphics (via LibreHardwareMonitor).
+* **Lightweight:** Uses standard text formatting instead of heavy UI libraries.
+* **Process Tracking:** Lists the top 5 processes consuming the most CPU.
 
 ## 🛠️ Prerequisites
 
-* Python 3.8 or higher
-* **Administrator Privileges:** You must run your terminal as Administrator to access low-level hardware sensors (GPU Temps/Load).
+* Python 3.8 or higher.
+* **Administrator Privileges:** You must run your terminal as **Administrator** to access GPU hardware sensors.
 
 ## 📦 Installation
 

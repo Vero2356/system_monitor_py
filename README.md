@@ -1,39 +1,42 @@
-# 🖥️ Lightweight Python System Monitor
+# 🖥️ System Monitor CLI
 
-A simple, dependency-light terminal dashboard for monitoring system performance. It tracks CPU, RAM, GPU, and high-resource processes in real-time using standard Python output.
+A lightweight Python script that monitors system performance in real-time directly in your terminal. It tracks CPU usage, Memory (RAM), Swap, Disk usage, and general system information.
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Platform](https://img.shields.io/badge/platform-Windows-0078D6)
+## 🚀 Features
 
-## ✨ Features
+* **Interactive Refresh Rate:** You decide how often the data updates by entering a time in seconds at startup.
+* **System Info:** OS version, Node name, Processor type.
+* **CPU:** Physical/Logical cores, Frequency, and Usage per core.
+* **Memory:** RAM and SWAP usage.
+* **Disk:** Partitions, Space usage, and Read/Write statistics.
 
-* **Real-Time Monitoring:** Updates system stats every second.
-* **Universal GPU Support:** Works with NVIDIA, AMD, and Intel Integrated Graphics (via LibreHardwareMonitor).
-* **Lightweight:** Uses standard text formatting instead of heavy UI libraries.
-* **Process Tracking:** Lists the top 5 processes consuming the most CPU.
+## 📋 Prerequisites
 
-## 🛠️ Prerequisites
+Before you begin, ensure you have met the following requirements:
+* **Python 3.x** installed on your machine.
 
-* Python 3.8 or higher.
-* **Administrator Privileges:** You must run your terminal as **Administrator** to access GPU hardware sensors.
-
-## 📦 Installation
+## 🛠️ Installation
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/yourusername/system-monitor.git](https://github.com/yourusername/system-monitor.git)
-    cd system-monitor
+    git clone [https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git)
     ```
+    *(Or download the ZIP file and extract it)*
 
-2.  **Install dependencies:**
+2.  **Navigate to the project directory:**
     ```bash
-    pip install -r requirements.txt
+    cd YOUR_REPOSITORY_NAME
     ```
 
-## 🚀 Usage
+3.  **Install the required library:**
+    This project uses `psutil` to fetch system data. Install it via pip:
+    ```bash
+    pip install psutil
+    ```
 
-**Important:** Open your Command Prompt, PowerShell, or Terminal as **Administrator**.
+## ▶️ How to Run
+
+Run the script using Python:
 
 ```bash
-python monitor.py
+python main.py

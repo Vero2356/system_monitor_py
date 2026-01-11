@@ -14,24 +14,20 @@ def convert_size(bytes, suffix="B"):
         bytes /= factor
 
 def clear_screen():
-    # AI Note: Checks OS to use correct clear command (cls for Windows, clear for Mac/Linux)
+    # Use 'cls' for Windows, 'clear' for others
     os.system('cls' if os.name == 'nt' else 'clear')
 
-# user inputs time required before reloading data
-Time = 0
-
+# Get update interval from user
 Time = int(input("Enter the amount of seconds before reloading data: "))
 
-# AI Note: wrapping the main logic in a try-block to handle errors gracefully
 try:
-    # AI Note: Starting the infinite loop for continuous monitoring
+    # Main loop for continuous monitoring
     while True:
-        # AI Note: Clearing the terminal screen at the start of each update
         clear_screen()
 
         print("="*40, "System Information", "="*40)
         
-        # AI Note: We moved System Info inside the loop so it stays visible after clearing screen
+        # System info needs to be reprinted after clear
         uname = platform.uname()
         print(f"System: {uname.system}") # name of OS
         print(f"Node name: {uname.node}") # name of notebook
@@ -54,7 +50,6 @@ try:
 
         # frequency
         cpufreq = psutil.cpu_freq()
-        # AI Note: Added a safety check in case cpufreq is unavailable
         if cpufreq:
             print(f"Max frequency {cpufreq.max:.02f}Mhz")
             print(f"Min frequency {cpufreq.min:.02f}Mhz")
@@ -62,7 +57,7 @@ try:
 
         # usage
         print("CPU Usage per Core:")
-        # AI Note: interval=1 blocks for 1 sec to measure accuracy. Moved Total Usage OUT of the loop to print it only once.
+        # Measures CPU over 1 sec interval
         for i, percentage in enumerate(psutil.cpu_percent(percpu=True, interval=1)):
             print(f"Core {i}: {percentage}%")
         
@@ -115,10 +110,10 @@ try:
         print("\n" + "="*80)
         print("Press Ctrl+C to exit")
 
-        # AI Note: Pausing for 10 seconds before the next update cycle
+        # Wait user-defined seconds before reload
         time.sleep(Time)
 
-# AI Note: This block catches the Ctrl+C command so the program exits cleanly without ugly errors
+# Handle clean exit on Ctrl+C
 except KeyboardInterrupt:
     print("\n")
     print("="*40)

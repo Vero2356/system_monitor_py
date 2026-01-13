@@ -13,6 +13,11 @@ def convert_size(bytes, suffix="B"):
             return f"{bytes:.2f}{unit}{suffix}"
         bytes /= factor
 
+#def import_gui():
+    
+#   import tkinter
+
+
 def clear_screen():
     # Use 'cls' for Windows, 'clear' for others
     os.system('cls' if os.name == 'nt' else 'clear')

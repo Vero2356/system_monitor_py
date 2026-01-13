@@ -7,5 +7,4 @@ window.title("Hardware statistics")
 window.iconphoto(True, Icon)
 window.config(background="#E8ECEF")
 window.mainloop() # place window on screen and listens for events
-
 print("hello")
